@@ -38,8 +38,8 @@ def measure():
   while GPIO.input(GPIO_ECHO)==1:
     stop = time.time()
 
-  elapsed = stop-start
-  distance = (elapsed * speedSound)/2
+  elapsed = stop - start
+  distance = (elapsed * speedSound) / 2.0
 
   return distance
 
@@ -53,7 +53,7 @@ def measure_average():
   time.sleep(0.1)
   distance3=measure()
   distance = distance1 + distance2 + distance3
-  distance = distance / 3
+  distance = distance / 3.0
   return distance
 
 # -----------------------
@@ -65,8 +65,8 @@ def measure_average():
 GPIO.setmode(GPIO.BCM)
 
 # Define GPIO to use on Pi
-GPIO_TRIGGER = 23
-GPIO_ECHO    = 24
+GPIO_TRIGGER = 20
+GPIO_ECHO    = 21
 
 # Speed of sound in cm/s at temperature
 temperature = 20
